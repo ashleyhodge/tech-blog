@@ -1,0 +1,28 @@
+<a href="/dashboard"> &larr; Back to dashboard</a>
+
+{{> posts post}}
+
+{{#if loggedIn}}
+
+<div class="container mb-5">
+  <div class="card mx-auto" style="width: 500px;">
+    <div class="card-body mx-auto">
+      <form class="comment-form my-4">
+        <div>
+          <textarea class="form-control" rows="3" name="comment-body"></textarea>
+        </div>
+
+        <div>
+          <button class="btn btn-primary" type="submit">add comment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{{/if}}
+
+{{> comments post.comments}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
