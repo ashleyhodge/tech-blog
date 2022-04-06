@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
+const withAuth = require('../utils/auth');
 
 // get all posts from a single user
 router.get('/', (req, res) => {
@@ -37,8 +38,8 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-// get edited posts from a single user
-router.get('/edit/:id', (req, res) => {
+// get edit posts from a single user
+router.get('/edit/:id', withAuth, (req, res) => {
   Post.findByPk(req.params.id, {
     attributes: [
       'id',
