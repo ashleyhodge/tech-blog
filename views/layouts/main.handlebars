@@ -16,9 +16,12 @@
             <a class="navbar-brand" href="/">Tech Blog</a>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     {{#if loggedIn}}
+                    <li class="nav-item"><a class="nav-link" href="/">home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/dashboard">dashboard</a></li>
                     <button class="btn btn-dark" id="logout">logout</button>
                     {{else}}
+                    <li class="nav-item"><a class="nav-link" href="/">home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/dashboard">dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="/login">login</a></li>
                     {{/if}}
                 </ul>
